@@ -1,0 +1,23 @@
+{	scopeName = 'source.js.yui3';
+	comment = 'Yahoo! User Interface Library <%= version %>';
+	foldingStartMarker = '(^.*{[^}]*$|^.*\([^\)]*$|^.*/\*(?!.*\*/).*$)';
+	foldingStopMarker = '(^\s*\}|^\s*\)|^(?!.*/\*).*\*/)';
+	patterns = (
+		{	name = 'support.class.js.yui3';
+			match = '\b(Y|YUI)\b';
+		},
+		{	name = 'support.class.js.yui3';
+			match = '(?<=\.)(<%= classes.join('|') %>)\b';
+		},
+		{	name = 'support.function.js.yui3';
+			match = '\b(<%= functions.join('|') %>)\b(?=\()';
+		},
+		{	name = 'support.constant.js.yui3';
+			match = '(?<=\.)(<%= constants.join('|') %>)\b';
+		},
+		{	name = 'support.variable.js.yui3';
+			match = '(?<=\.)(<%= variables.join('|') %>)\b';
+		},
+		{	include = 'source.js'; },
+	);
+}
