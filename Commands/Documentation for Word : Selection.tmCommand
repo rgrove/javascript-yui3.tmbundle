@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require 'cgi'
+
+SEARCH_URL = 'http://search.yahoo.com/search?p=%q+inurl:developer.yahoo.com/yui/3/api'
+
+word = (ENV['TM_CURRENT_WORD'] || '').gsub(/[\(\)\s;]/, '')
+puts "&lt;meta http-equiv=\"refresh\" content=\"0;url=#{SEARCH_URL.sub('%q', CGI.escape(word))}\"&gt;"</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^h</string>
+	<key>name</key>
+	<string>Documentation for Word / Selection</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.js.yui3</string>
+	<key>uuid</key>
+	<string>2A852213-4CF8-4D2B-A457-84F9FE05C98B</string>
+</dict>
+</plist>
